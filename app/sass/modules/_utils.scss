@@ -1,0 +1,45 @@
+.utilities{
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-content: flex-start;
+  background: white;
+  border-right: 1px solid $white;
+  box-shadow: $shadow; 
+  align-self: flex-start;
+  width: 210px;
+  
+  
+  &--item{
+    padding: 15px 0 15px 10px;
+    border-bottom: 1px solid $white;
+    cursor: pointer;
+    
+    & > i {
+      font-weight: 700;
+      color: $navy-blue;
+      margin-right: 10px;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    &-name{
+      display: inline-block;
+      @extend %font-regular;
+      color: $black;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    
+    &.active {
+      background: $navy-blue;
+      
+      & > i {
+        color: $light-grey;
+      }
+    }
+    
+    &:hover {
+      background: lighten($navy-blue, 30);
+    }
+  }
+}

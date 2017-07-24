@@ -1,0 +1,42 @@
+@mixin shared {
+  font-size: 1.1em;
+  margin-right: 10px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all .4s ease;
+}
+
+.floater{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 0 10px 10px;
+  
+  %hover {
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &--code{
+    color: $cascade;
+    @include shared;
+    @extend %hover;
+  }
+  
+  
+  &--edit{
+    color: $white;
+    @include shared;
+    @extend %hover;
+  }
+  
+  &--close{
+    color: $white;
+    @include shared;
+    &:hover {
+      color: $red;
+    }
+  }
+}
