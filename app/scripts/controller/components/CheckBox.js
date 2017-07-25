@@ -29,6 +29,10 @@ class CheckBox extends FormFactory {
         });
     }
     
+    handleChecked(e){
+        return this.setState({checked: e.target.checked})
+    }
+    
     render() {
         let buildConfig = [this.state, ["tooltip", "editTab"]]
         let BuildObject = Reflect.apply(this.constructSetting, null, buildConfig);
@@ -44,7 +48,11 @@ class CheckBox extends FormFactory {
                     <input
                         type={this.state.type}
                         className="filled-in"
-                        name="checkbox"
+                        disabled={this.state.disabled}
+                        onChange={(e) => this.handleChecked(e)}
+                        checked={this.state.checked}
+                        id="checkbox"
+                        value=""
                     />
                     <label htmlFor="checkbox">Filled in</label>
                 </p>

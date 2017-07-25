@@ -44,10 +44,13 @@ class Radio extends FormFactory{
                     <input
                         type={this.state.type}
                         className="with-gap"
-                        id={this.props.id}
-                        data-id={this.state.defaultClass}
+                        disabled={this.state.disabled}
+                        onChange={(e) => this.handleChecked(e)}
+                        checked={this.state.checked}
+                        value=""
+                        id="radio"
                     />
-                    <label htmlFor={this.props.id}>Filled in</label>
+                    <label htmlFor="radio">Filled in</label>
                 </p>
                 <EditTab>
                     <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>

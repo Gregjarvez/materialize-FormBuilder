@@ -32,6 +32,7 @@ class Select extends FormFactory {
         });
     }
 
+
     render() {
         let buildConfig = [this.state, ["tooltip", "editTab"]]
         let BuildObject = Reflect.apply(this.constructSetting, null, buildConfig);
@@ -47,12 +48,12 @@ class Select extends FormFactory {
                     <select id={this.state.defaultClass} data-id={this.props.id}>
                         <option value="">Choose your option</option>
                         {
-                            this.state.option.map((option, index) => {
+                            this.state.option.map((_, index) => {
                                 return <option
                                     key={index}
                                     value={index}
                                 >
-                                    {option}
+                                    {`Option ${index}`}
                                 </option>
                             })
                         }

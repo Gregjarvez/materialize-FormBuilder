@@ -127,6 +127,13 @@ class SettingBuild extends React.Component {
                         </li>
                     }
                     {
+                        Build.includes("option") &&
+                        <li>
+                            <span className="setting--text">Options:</span>
+                            <input type="number"  onChange={(e) => this.updateFormField(e, "optionCount")}/>
+                        </li>
+                    }
+                    {
                         Build.includes("value") &&
                         <li>
                             <p className="setting--paragraph">

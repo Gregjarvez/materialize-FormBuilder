@@ -54,13 +54,13 @@ const ConfigObject = {
     radio: {
         elementType: "radio",
         defaultClass: "factory--for-radio",
-        disabled: false,
-        checked: false
+        disabled: "",
+        checked: ""
     },
     select: {
         elementType: "select",
         defaultClass: "factory--for-select",
-        option: ["option 1", "option 2","option 3", "option 4"]
+        option: Array(3).fill()
     },
     number: {
         elementType: "number",
