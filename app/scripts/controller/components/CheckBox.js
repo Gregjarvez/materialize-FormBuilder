@@ -40,14 +40,13 @@ class CheckBox extends FormFactory {
                 destruct={this.destruct}
                 visible={this.state.tooltip}
             >
-                <p>
+                <p id={this.props.id}>
                     <input
                         type={this.state.type}
                         className="filled-in"
-                        id={this.props.id}
-
+                        name="checkbox"
                     />
-                    <label htmlFor={this.props.id}>Filled in</label>
+                    <label htmlFor="checkbox">Filled in</label>
                 </p>
                 <EditTab>
                     <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>

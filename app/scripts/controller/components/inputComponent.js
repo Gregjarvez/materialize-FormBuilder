@@ -21,7 +21,7 @@ class InputComponent extends InputFactory {
 
     componentWillMount() {
         let {
-            elementType, defaultClass, placeHolder, value, required, disabled,
+            elementType, defaultClass, placeHolder, required, disabled,
             subtype,label
         } = this.props.config;
 
@@ -29,7 +29,6 @@ class InputComponent extends InputFactory {
             type: elementType,
             defaultClass: defaultClass,
             placeHolder: placeHolder,
-            value: value,
             required: required,
             disabled: disabled,
             subtype: subtype,
@@ -40,10 +39,7 @@ class InputComponent extends InputFactory {
     };
     
     componentDidMount(){
-        let el;
         this.textInput.focus();
-        el = document.querySelector(`#${this.props.id}`);
-        console.log(el.outerHTML.toString());
     }
     
 
@@ -68,8 +64,9 @@ class InputComponent extends InputFactory {
                             className={`validate ${this.state.defaultClass}`}
                             ref={(input) => this.textInput = input}
                             disabled={this.state.disabled === "true" ? "disabled": null}
+                            name="input-field"
                         />
-                        <label htmlFor={this.props.id}>{this.state.label}</label>
+                        <label htmlFor="input-field">{this.state.label}</label>
                     </div>
                     <EditTab>
                         <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>

@@ -46,7 +46,7 @@ class SettingBuild extends React.Component {
                         </li>
                     }
                     {
-                        Build.includes("value")  &&
+                        Build.includes("value") &&
                         <li>
                             <span className="setting--text">Value:</span>
                             <input
@@ -100,18 +100,29 @@ class SettingBuild extends React.Component {
                         </li>
                     }
                     {
-                       Build.includes("wrap") &&
+                        Build.includes("wrap") &&
                         <li>
                             <span className="setting--text">Wrap:</span>
                             <select
                                 className="browser-default setting--select"
                                 onChange={e => this.updateFormField(e, "wrap")}
                             >
-                                {
-                                    this.props.state.wrap.map((each) => {
-                                        return <option key={each} value={each}>{each}</option>
-                                    })
-                                }
+                                <option value="Hard">Hard</option>
+                                <option value="Soft">Soft</option>
+                            </select>
+                        </li>
+                    }
+                    {
+                        Build.includes("checked") &&
+                        <li>
+                            <span className="setting--text">Checked:</span>
+                            <select
+                                className="browser-default setting--select"
+                                value={this.state.checked}
+                                onChange={e => this.updateFormField(e, "checked")}
+                            >
+                                <option value="">false</option>
+                                <option value="true">True</option>
                             </select>
                         </li>
                     }

@@ -5,7 +5,6 @@ import EditTab from "./EditTab";
 import SettingBuild from "./setting";
 
 
-
 class InputDate extends FormFactory {
     constructor(props) {
         super(props);
@@ -29,23 +28,25 @@ class InputDate extends FormFactory {
             tooltip: false
         });
     }
-    
+
     render() {
         let buildConfig = [this.state, ["tooltip", "editTab"]]
         let BuildObject = Reflect.apply(this.constructSetting, null, buildConfig);
         return (
-            <Header 
-                    mouseIn={this.setToolTip}
-                    mouseOut={this.removeTooltip}
-                    id={this.props.id}
-                    destruct={this.destruct}
-                    visible={this.state.tooltip}
+            <Header
+                mouseIn={this.setToolTip}
+                mouseOut={this.removeTooltip}
+                id={this.props.id}
+                destruct={this.destruct}
+                visible={this.state.tooltip}
             >
-                <input
-                    type={this.state.type}
-                    className="timepicker"
-                    id={this.props.id}
-                />
+                <div id={this.props.id}>
+                    <input
+                        type={this.state.type}
+                        className={`timepicker ${this.state.defaultClass}`}
+                        disabled={this.state.disabled}
+                    />
+                </div>
                 <EditTab>
                     <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>
                 </EditTab>

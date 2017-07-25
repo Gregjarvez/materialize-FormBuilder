@@ -4,7 +4,7 @@ import Header from "./headerPartial";
 import EditTab from "./EditTab";
 import SettingBuild from "./setting";
 
-class Button extends FormFactory{
+class Button extends FormFactory {
     constructor(props) {
         super(props);
         this.state = {};
@@ -30,7 +30,7 @@ class Button extends FormFactory{
 
         });
     }
-    
+
     render() {
         let buildConfig = [this.state, ["tooltip", "editTab"]]
         let BuildObject = Reflect.apply(this.constructSetting, null, buildConfig);
@@ -42,14 +42,17 @@ class Button extends FormFactory{
                 destruct={this.destruct}
                 visible={this.state.tooltip}
             >
-                <button
-                    className={`btn waves-effect waves-light ${this.state.defaultClass}`}
-                    type={this.state.elementType}
-                    id={this.props.id}
-                   
-                >
-                    {this.state.label}
-                </button>
+                <div id={this.props.id}>
+                    <button
+                        className={`btn waves-effect waves-light ${this.state.defaultClass}`}
+                        type={this.state.elementType}
+
+                        disabled={this.state.disabled}
+
+                    >
+                        {this.state.label}
+                    </button>
+                </div>
                 <EditTab onSubmit={this.handleSubmit}>
                     <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>
                 </EditTab>
@@ -57,7 +60,6 @@ class Button extends FormFactory{
         );
     }
 }
-
 
 
 export default Button;

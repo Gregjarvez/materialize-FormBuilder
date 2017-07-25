@@ -19,13 +19,12 @@ class TextArea extends FormFactory {
     }
 
     componentWillMount() {
-        let {elementType, defaultClass , placeHolder, wrap, value} = this.props.config;
+        let {elementType, defaultClass , placeHolder, wrap} = this.props.config;
 
         return this.setState({
             type: elementType,
             defaultClass: defaultClass,
             placeHolder: placeHolder,
-            value: value,
             disabled: false,
             wrap: wrap,
             tooltip: false,
@@ -47,10 +46,11 @@ class TextArea extends FormFactory {
                 <div className="row">
                     <div className="col s12">
                         <div className="row">
-                            <div className="input-field col s6">
+                            "timepicker"<div className="input-field"  id={this.props.id}>
                                 <textarea
-                                    id={this.props.id}
                                     className={`materialize-textarea ${this.state.defaultClass}`}
+                                        wrap={this.state.wrap}
+                                    disabled={this.state.disabled}
                                 >
                                 </textarea>
                                 <label htmlFor={this.props.id}>{this.state.placeHolder}</label>

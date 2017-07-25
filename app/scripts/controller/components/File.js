@@ -42,14 +42,14 @@ class File extends FormFactory {
                     destruct={this.destruct}
                     visible={this.state.tooltip}
             >
-                <form action={this.state.action}>
-                    <div className="file-field input-field">
+                <form>
+                    <div className="file-field input-field" id={this.props.id}>
                         <div className="btn waves-effect waves-light">
                             <span>{this.state.label}</span>
-                            <input type={this.state.type}/>
+                            <input type={this.state.type} disabled={this.state.disabled}/>
                         </div>
                         <div className="file-path-wrapper">
-                            <input className="file-path validate" type="text"/>
+                            <input className="file-path validate" type="text" disabled={this.state.disabled}/>
                         </div>
                     </div>
                 </form>

@@ -16,7 +16,6 @@ const ConfigObject = {
     text: {
         elementType: "text",
         defaultClass: "factory--for-text",
-        value: "value",
         placeHolder: "placeholder",
         required: "required",
         disabled: "disabled",
@@ -27,15 +26,14 @@ const ConfigObject = {
         elementType: "submit",
         defaultClass: "factory--for-button",
         label: "Button",
-        disabled: "disabled"
+        disabled: ""
     },
     textarea: {
         elementType: "textarea",
         defaultClass: "factory--for-textarea",
         placeHolder: "Text Area",
-        value: "Message",
-        disabled: "disabled",
-        wrap: ["hard", "soft"],
+        disabled: "",
+        wrap: "hard"
     },
     date: {
         elementType: "date",
@@ -44,15 +42,14 @@ const ConfigObject = {
     file: {
         elementType: "file",
         defaultClass: "factory--for-file",
-        disabled: false,
-        action: null,
+        disabled: "",
         label: "File"
     },
     checkbox: {
         elementType: "checkbox",
         defaultClass: "factory--for-checkbox",
-        disabled: false,
-        checked: false
+        disabled: "",
+        checked: ""
     },
     radio: {
         elementType: "radio",
