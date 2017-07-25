@@ -4,6 +4,7 @@ import Header from "./headerPartial";
 import EditTab from "./EditTab";
 import SettingBuild from "./setting";
 
+
 class InputComponent extends InputFactory {
     constructor(props) {
         super(props);
@@ -39,7 +40,10 @@ class InputComponent extends InputFactory {
     };
     
     componentDidMount(){
+        let el;
         this.textInput.focus();
+        el = document.querySelector(`#${this.props.id}`);
+        console.log(el.outerHTML.toString());
     }
     
 
@@ -57,17 +61,17 @@ class InputComponent extends InputFactory {
                 editTap={this.state.editTab}
             >
                 <div className="row">
-                    <div className="input-field">
+                    <div className="input-field"  id={this.props.id}>
                         <input
                             placeholder={this.state.placeHolder}
-                            id="Input-type-text"
                             type={this.state.type}
                             className={`validate ${this.state.defaultClass}`}
                             ref={(input) => this.textInput = input}
+                            disabled={this.state.disabled === "true" ? "disabled": null}
                         />
-                        <label htmlFor="Input-type-text">{this.state.label}</label>
+                        <label htmlFor={this.props.id}>{this.state.label}</label>
                     </div>
-                    <EditTab >
+                    <EditTab>
                         <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>
                     </EditTab>
                 </div>

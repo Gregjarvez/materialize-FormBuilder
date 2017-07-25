@@ -14,6 +14,7 @@ class Select extends FormFactory {
         this.removeTooltip = this.removeTooltip.bind(this);
         this.destruct = this.destruct.bind(this);
         this.constructSetting = this.constructSetting.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -57,8 +58,8 @@ class Select extends FormFactory {
                         }
                     </select>
                 </div>
-                <EditTab onSubmit={this.handleSubmit}>
-                    <SettingBuild state={BuildObject}/>
+                <EditTab>
+                    <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>
                 </EditTab>
             </Header>
         );

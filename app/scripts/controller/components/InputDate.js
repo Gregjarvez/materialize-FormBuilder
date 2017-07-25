@@ -15,7 +15,7 @@ class InputDate extends FormFactory {
         this.removeTooltip = this.removeTooltip.bind(this);
         this.destruct = this.destruct.bind(this);
         this.constructSetting = this.constructSetting.bind(this);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
@@ -46,8 +46,8 @@ class InputDate extends FormFactory {
                     className="timepicker"
                     id={this.props.id}
                 />
-                <EditTab onSubmit={this.handleSubmit}>
-                    <SettingBuild state={BuildObject} />
+                <EditTab>
+                    <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>
                 </EditTab>
             </Header>
         );

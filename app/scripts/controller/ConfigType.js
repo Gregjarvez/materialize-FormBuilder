@@ -68,7 +68,7 @@ const ConfigObject = {
     number: {
         elementType: "number",
         defaultClass: "factory--for-number",
-        value: null
+        value: 0
     }
 };
 

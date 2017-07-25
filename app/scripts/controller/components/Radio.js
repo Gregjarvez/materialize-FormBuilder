@@ -14,7 +14,7 @@ class Radio extends FormFactory{
         this.removeTooltip = this.removeTooltip.bind(this);
         this.destruct = this.destruct.bind(this);
         this.constructSetting = this.constructSetting.bind(this);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentWillMount() {
@@ -49,8 +49,8 @@ class Radio extends FormFactory{
                     />
                     <label htmlFor={this.props.id}>Filled in</label>
                 </p>
-                <EditTab onSubmit={this.handleSubmit}>
-                    <SettingBuild state={BuildObject} />
+                <EditTab>
+                    <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>
                 </EditTab>
             </Header>
         );

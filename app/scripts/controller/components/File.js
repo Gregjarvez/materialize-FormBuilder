@@ -14,6 +14,7 @@ class File extends FormFactory {
         this.removeTooltip = this.removeTooltip.bind(this);
         this.destruct = this.destruct.bind(this);
         this.constructSetting = this.constructSetting.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -52,8 +53,8 @@ class File extends FormFactory {
                         </div>
                     </div>
                 </form>
-                <EditTab onSubmit={this.handleSubmit}>
-                    <SettingBuild state={BuildObject} />
+                <EditTab>
+                    <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>
                 </EditTab>
             </Header>
         );
