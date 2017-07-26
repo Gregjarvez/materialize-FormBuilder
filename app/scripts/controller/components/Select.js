@@ -1,41 +1,50 @@
-import React from "react";
-import FormFactory from "../FormFactory";
-import Header from "./headerPartial";
-import EditTab from "./EditTab";
-import SettingBuild from "./setting";
+import React from "react"
+import FormFactory from "../FormFactory"
+import Header from "./headerPartial"
+import EditTab from "./EditTab"
+import SettingBuild from "./setting"
 
 
 class Select extends FormFactory {
     constructor(props) {
-        super(props);
-        this.state = {};
+        super(props)
+        this.state = {}
 
-        this.setToolTip = this.setToolTip.bind(this);
-        this.removeTooltip = this.removeTooltip.bind(this);
-        this.destruct = this.destruct.bind(this);
-        this.constructSetting = this.constructSetting.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.setToolTip = this.setToolTip.bind(this)
+        this.removeTooltip = this.removeTooltip.bind(this)
+        this.destruct = this.destruct.bind(this)
+        this.constructSetting = this.constructSetting.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
-        return $('select').material_select();
+        return $('select').material_select()
     }
 
     componentWillMount() {
-        let {elementType, defaultClass, option} = this.props.config;
+        let {elementType, defaultClass, option} = this.props.config
 
         return this.setState({
             type: elementType,
             defaultClass: defaultClass,
             option: option,
             tooltip: false
-        });
+        })
     }
 
 
     render() {
         let buildConfig = [this.state, ["tooltip", "editTab"]]
-        let BuildObject = Reflect.apply(this.constructSetting, null, buildConfig);
+        let BuildObject = Reflect.apply(this.constructSetting, null, buildConfig)
+        let list = this.state.option.map((option, index) => {
+            return <option
+                key={index}
+                value={index}
+            >
+                {`option ${index}`}
+            </option>
+        })
+        
         return (
             <Header
                 mouseIn={this.setToolTip}
@@ -47,24 +56,15 @@ class Select extends FormFactory {
                 <div className="input-field col s12">
                     <select id={this.state.defaultClass} data-id={this.props.id}>
                         <option value="">Choose your option</option>
-                        {
-                            this.state.option.map((_, index) => {
-                                return <option
-                                    key={index}
-                                    value={index}
-                                >
-                                    {`Option ${index}`}
-                                </option>
-                            })
-                        }
+                        {list}
                     </select>
                 </div>
                 <EditTab>
                     <SettingBuild state={BuildObject} onsubmit={this.handleSubmit}/>
                 </EditTab>
             </Header>
-        );
+        )
     }
 }
 
-export default Select;
+export default Select

@@ -8,8 +8,8 @@ class SettingBuild extends React.Component {
         this.updateFormField = this.updateFormField.bind(this);
     }
 
-    updateFormField(e, state) {
-        return this.setState({[state]: e.target.value})
+    updateFormField(e, state, value) {
+        return this.setState({[state]: value || e.target.value})
     }
 
     render() {
@@ -130,7 +130,16 @@ class SettingBuild extends React.Component {
                         Build.includes("option") &&
                         <li>
                             <span className="setting--text">Options:</span>
-                            <input type="number"  onChange={(e) => this.updateFormField(e, "optionCount")}/>
+                            <input type="number"
+                                   onChange={(e) => {
+                                       let array;
+                                       let fill = Math.abs(parseInt(e.target.value));
+                                        if(fill > 1){
+                                            array = new Array(fill).fill("option");
+                                            this.updateFormField(e, "option", array)
+                                            console.log(array);
+                                        }
+                                   }}/>
                         </li>
                     }
                     {

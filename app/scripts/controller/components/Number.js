@@ -14,6 +14,7 @@ class Number extends FormFactory {
         this.destruct = this.destruct.bind(this);
         this.constructSetting = this.constructSetting.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentWillMount() {
@@ -26,7 +27,12 @@ class Number extends FormFactory {
             tooltip: false
         });
     }
-
+    
+    handleChange(e){
+        return this.setState({value: e.target.value})    
+    }
+    
+    
     render() {
         let buildConfig = [this.state, ["tooltip", "editTab"]]
         let BuildObject = Reflect.apply(this.constructSetting, null, buildConfig);
@@ -41,9 +47,8 @@ class Number extends FormFactory {
                 <div className={`input-field col s6 ${this.state.defaultClass}`}>
                     <input
                         type={this.state.type}
-                        id={this.state.defaultClass}
-                        data-id={this.props.id}
                         value={this.state.value}
+                        onChange={(e) => this.handleChange(e)}
                     />
                 </div>
                 <EditTab>

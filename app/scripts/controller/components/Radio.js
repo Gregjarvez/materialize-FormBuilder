@@ -18,7 +18,6 @@ class Radio extends FormFactory{
     }
 
     componentWillMount() {
-
         let {elementType, defaultClass, disabled, checked} = this.props.config;
         return this.setState({
             type: elementType,
@@ -27,6 +26,11 @@ class Radio extends FormFactory{
             disabled: disabled,
             tooltip: false
         });
+    }
+    
+
+    handleChecked(e){
+        return this.setState({checked: e.target.checked})
     }
     
     render() {

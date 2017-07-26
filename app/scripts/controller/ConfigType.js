@@ -60,7 +60,7 @@ const ConfigObject = {
     select: {
         elementType: "select",
         defaultClass: "factory--for-select",
-        option: Array(3).fill()
+        option: Array(3).fill("option")
     },
     number: {
         elementType: "number",
