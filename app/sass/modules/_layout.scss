@@ -1,43 +1,1 @@
-.container {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.header{
-  display: block;
-  margin: 0 auto;
-  padding: 2rem;
-  
-  &--title{
-    width: 100%;
-    @extend %font-header;
-    letter-spacing: 1.4px;
-    color: $navy-blue;
- 
-  }
-  
-  &--subtitle{
-    width: 100%;
-    @extend %font-subheadings;
-    color: $navy-blue;
-    
-    
-    & > strong{
-      color: $navy-blue;
-    }
-  }
-}
-
-.playground{
-  display: flex;
-  position: relative;
-  flex-wrap: nowrap;
-  width: 1100px;
-  margin: 0 auto 3rem auto;
-  
-}
-
-.input-field > input{
-  margin-bottom: 5px !important;
-} 
+.container {  max-width: 1300px;  margin: 0 auto;  padding: 0;}.header{  display: block;  margin: 0 auto;  padding: 2rem;    &--title{    width: 100%;    @extend %font-header;    letter-spacing: 1.4px;    color: $navy-blue;   }    &--subtitle{    width: 100%;    @extend %font-subheadings;    color: $navy-blue;            & > strong{      color: $navy-blue;    }  }}.playground{  display: flex;  position: relative;  flex-wrap: nowrap;  width: 1100px;  margin: 0 auto 3rem auto;  }.input-field > input{  margin-bottom: 5px !important;  max-width: 500px;} 
