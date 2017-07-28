@@ -1,107 +1,1 @@
-.factory {
-  position: relative;
-  margin: 5px 5px;
-  
-  background: white;
-  padding: 15px 15px;
-  
-  &--for-textarea{
-    padding: 10px 10px 0 10px;
-  }
-  
-  &--for-number {
-    max-width: 50%;
-  }
-  
-  &--editTap{
-    min-height: 300px;
-    background: white;
-    border: 2px solid $white;
-    margin-top: 10px;
-  }
-  
-  &--forms {
-    padding: 10px;
-  }
-}
-
-.setting{
-  display: flex;
-  
-  &--paragraph{
-      
-    & > label {
-      font-size: 1rem;
-      color: $black;
-    }
-  }
-  
-  &--default{
-    padding: 10px;
-    flex: 1;
-    @extend %font-subheadings;
-    font-size: 1rem;
-    border-bottom: 1px solid $white;
-    letter-spacing: 2px;
-  }
-
-  &--text{
-    font-size: 1rem;
-    color: $black;
-    text-transform: capitalize;
-    padding-right: 10px;
-  }
-  
-  &--input {
-    
-    &-text {
-      height: 20px;
-      width: 300px;
-      background: $white;
-      border: none;
-      border-radius: 5px;
-      padding: 15px;
-      font-size: 1rem;
-      color: $black;
-      margin-right: 30px;
-      
-    }
-  }
-  &--config > li{
-    padding: 10px;
-    display: flex;
-    
-    & > span {
-      flex-basis: 20%;
-    }
-
-  }
-
-  &--select{
-    display: inline-block;
-    width: 100px;
-    padding: 10px;
-    height: auto;
-  }
-
-  &--is-active{
-    background: $navy-blue;
-    color: white;
-  }
-
-  &--button {
-    width: 100px;
-    padding: 5px 10px;
-    outline: none;
-    color: $navy-blue;
-    background: white;
-    border: 1px solid $navy-blue;
-    border-radius: 3px;
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
-}
-
-
-
-
+.factory {  position: relative;  margin: 5px 5px;    background: white;  padding: 15px 15px;    &--for-textarea{    padding: 10px 10px 0 10px;  }    &--for-number {    max-width: 50%;  }    &--editTap{    min-height: 300px;    background: white;    border: 2px solid $white;    margin-top: 10px;    transition: all .4s ease;  }        &--forms {    padding: 10px;  }    &--side-note{    @extend %font-subheadings;    margin: 10px auto;    font-size: 1rem;    max-width: 500px;    color: $navy-blue;  }}.setting{  display: flex;    &--paragraph{          & > label {      font-size: 1rem;      color: $black;    }  }    &--default{    padding: 10px;    flex: 1;    @extend %font-subheadings;    font-size: 1rem;    border-bottom: 1px solid $white;    letter-spacing: 2px;    transition: all 0.5s ease-in-out;      }  &--text{    font-size: 1rem;    color: $black;    text-transform: capitalize;    padding-right: 10px;  }    &--input {        &-text {      height: 20px;      width: 300px;      background: $white;      border: none;      border-radius: 5px;      padding: 15px;      font-size: 1rem;      color: $black;      margin-right: 30px;          }  }  &--config > li{    padding: 10px;    display: flex;        & > span {      flex-basis: 20%;    }  }  &--select{    display: inline-block;    width: 100px;    padding: 10px;    height: auto;  }  &--is-active{    background: $navy-blue;    color: white;  }  &--button {    width: 100px;    padding: 5px 10px;    outline: none;    color: $navy-blue;    background: white;    border: 1px solid $navy-blue;    border-radius: 3px;    font-size: 1.1rem;    cursor: pointer;    text-align: center ;    &-centered{      margin: 10px auto;    }  }}
