@@ -13,25 +13,22 @@ import {
 
 
 class FactoryBuild {
-    constructor() {
-        
-    }
 
     static text() {
-        return InputComponent 
+        return InputComponent
     }
     static button() {
         return Button
     }
-    
+
     static textarea(){
         return TextArea
     }
-    
+
     static date(){
         return InputDate
     }
-    
+
     static file(){
         return File
     }
@@ -39,7 +36,7 @@ class FactoryBuild {
     static checkbox (){
         return CheckBox
     }
-    
+
     static radio(){
         return Radio
     }
@@ -48,7 +45,7 @@ class FactoryBuild {
     static select(){
         return Select
     }
-    
+
     static number (props){
         return Number
     }
